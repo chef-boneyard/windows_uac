@@ -1,6 +1,6 @@
 # windows_uac Cookbook
 
-[![Cookbook Version](https://img.shields.io/cookbook/v/windows_uac.svg)](https://supermarket.chef.io/cookbooks/windows_uac) [![Build status](https://ci.appveyor.com/api/projects/status/39o3tnenw2njhw1b/branch/master?svg=true)](https://ci.appveyor.com/project/ChefWindowsCookbooks/windows-firewall/branch/master)
+[![Cookbook Version](https://img.shields.io/cookbook/v/windows_uac.svg)](https://supermarket.chef.io/cookbooks/windows_uac) [![Build status](https://ci.appveyor.com/api/projects/status/6sntpwminbxsljmw/branch/master?svg=true)](https://ci.appveyor.com/project/ChefWindowsCookbooks/windows-uac/branch/master)
 
 The windows_uac resource configures UAC on Windows hosts by setting registry keys at 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'
 
