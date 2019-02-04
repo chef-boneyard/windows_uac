@@ -18,36 +18,36 @@
 # limitations under the License.
 #
 
-description "The windows_uac resource configures UAC on Windows hosts by setting registry keys at 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'"
+description 'The windows_uac resource configures UAC on Windows hosts by setting registry keys at \'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\''
 
 # https://docs.microsoft.com/en-us/windows/security/identity-protection/user-account-control/user-account-control-group-policy-and-registry-key-settings#user-account-control-virtualize-file-and-registry-write-failures-to-per-user-locations
 property :enable_uac, [TrueClass, FalseClass],
-         description: "",
+         description: '',
          default: true # EnableLUA
 
 property :require_signed_binaries, [TrueClass, FalseClass],
-         description: "",
+         description: '',
          default: false # ValidateAdminCodeSignatures
 
 property :prompt_on_secure_desktop, [TrueClass, FalseClass],
-         description: "",
+         description: '',
          default: true # PromptOnSecureDesktop
 
 property :consent_behavior_admins, Symbol,
-         description: "",
+         description: '',
          equal_to: [:no_prompt, :secure_prompt_for_creds, :secure_prompt_for_consent, :prompt_for_creds, :prompt_for_consent, :prompt_for_consent_non_windows_binaries],
          default: :prompt_for_consent_non_windows_binaries # ConsentPromptBehaviorAdmin
 
 property :consent_behavior_users, Symbol,
-         description: "",
+         description: '',
          equal_to: [:auto_deny, :secure_prompt_for_creds, :prompt_for_creds],
          default: :prompt_for_creds # ConsentPromptBehaviorUser
 
 property :detect_installers, [TrueClass, FalseClass],
-         description: "" # EnableInstallerDetection
+         description: '' # EnableInstallerDetection
 
 action :configure do
-  description "Configures UAC by setting registry keys at 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'"
+  description 'Configures UAC by setting registry keys at \'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\''
 
   registry_key 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' do
     values [{ name: 'EnableLUA', type: :dword, data: bool_to_reg(new_resource.enable_uac) },
