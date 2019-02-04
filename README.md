@@ -27,12 +27,12 @@ The windows_uac resource configures UAC on Windows hosts by setting registry key
 
 #### properties
 
-- `enable_uac`: default: true
-- `require_signed_binaries`: default: false
-- `prompt_on_secure_desktop`: default: true
-- `detect_installers` default: not set
-- `consent_behavior_admins`: :no_prompt, :secure_prompt_for_creds, :secure_prompt_for_consent, :prompt_for_creds, :prompt_for_consent, :prompt_for_consent_non_windows_binaries. default: :prompt_for_consent_non_windows_binaries
-- `consent_behavior_users`: :auto_deny, :secure_prompt_for_creds, :prompt_for_creds. default: :prompt_for_creds
+- `enable_uac`: Enable or disable UAC Admin Approval Mode. If this is changed a system restart is required. Sets HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA. default: true
+- `require_signed_binaries`: Only elevate executables that are signed and validated. Sets HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA\ValidateAdminCodeSignatures. default: false
+- `prompt_on_secure_desktop`: Switch to the secure desktop when prompting for elevation. Sets HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA\PromptOnSecureDesktop. default: true
+- `detect_installers` Detect application installations and prompt for elevation. Sets HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA\EnableInstallerDetection. default: not set
+- `consent_behavior_admins`: Behavior of the elevation prompt for administrators in Admin Approval Mode. Sets HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA\ConsentPromptBehaviorAdmin. Options: :no_prompt, :secure_prompt_for_creds, :secure_prompt_for_consent, :prompt_for_creds, :prompt_for_consent, :prompt_for_consent_non_windows_binaries. default: :prompt_for_consent_non_windows_binaries
+- `consent_behavior_users`: Behavior of the elevation prompt for standard users. Sets HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA\ConsentPromptBehaviorUser. Options: :auto_deny, :secure_prompt_for_creds, :prompt_for_creds. default: :prompt_for_creds
 
 #### Examples
 
