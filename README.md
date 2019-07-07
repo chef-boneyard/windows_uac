@@ -4,6 +4,10 @@
 
 The windows_uac resource configures UAC on Windows hosts by setting registry keys at 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'
 
+## DEPRECATED
+
+This resource now ships in Chef Infra Client 15.0 and later. No further development will take place in this repository, but feel free to continue to use it for earlier Chef releases.
+
 ## Requirements
 
 ### Platforms
