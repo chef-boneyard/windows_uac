@@ -19,7 +19,7 @@ The windows_uac resource configures UAC on Windows hosts by setting registry key
 
 ## Resources
 
-### windows_windows_uacuac_rule
+### windows_uac
 
 #### Actions
 
